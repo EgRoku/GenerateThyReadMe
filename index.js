@@ -8,12 +8,12 @@ const questions = [
     {
         type: 'input',
         name: 'name',
-        message: 'Welcome to the README generator! To start, please provide your full name:',
+        message: 'Welcome to the GenerateThyReadme! To start, please provide your full name:',
         validate: nameInput => {
             if (nameInput) {
                 return true;
             } else {
-                console.log('Please enter your name! You must credit yourself for your work');
+                console.log('Please enter your name!');
                 return false;
             }
         }
@@ -26,7 +26,7 @@ const questions = [
             if (githubInput) {
                 return true;
             } else {
-                console.log('It is essential to link to your GitHub repo so users know where to find more of your work');
+                console.log('Please Link your Github account');
                 return false;
             }
         }
@@ -39,7 +39,7 @@ const questions = [
             if (emailInput) {
                 return true;
             } else {
-                console.log('If anyone has questions about your project, you must provide a way for them to contact you');
+                console.log('Please enter your email address');
                 return false;
             }
         }
@@ -52,7 +52,7 @@ const questions = [
             if (titleInput) {
                 return true;
             } else {
-                console.log('Every project must have a title. Please try again.');
+                console.log('Every project has a title, so please, name your child.');
                 return false;
             }
         }
@@ -60,12 +60,12 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: "Enter your project description here:",
+        message: 'Enter your project description here:',
         validate: descriptionInput => {
             if (descriptionInput) {
                 return true;
             } else {
-                console.log('It is essential to provide a description of your project. Not sure what to include? Head to the repo of this README generator and navigate to the section "Description: Questions to Consider" under the Guidelines header for some tips on writing a quality description.');
+                console.log('Enter a description please, thanks.');
                 return false;
             }
         }
@@ -73,12 +73,12 @@ const questions = [
     {
         type: 'input',
         name: 'installation',
-        message: 'What are the instructions for installation?',
+        message: 'What are the install directions?',
         validate: installationInput => {
             if (installationInput) {
                 return true;
             } else {
-                console.log('Please provide instructions for installation to ensure users have the proper software to run your program!');
+                console.log('Please provide instructions for installation to ensure users know how to run the program');
                 return false;
             }
         }
@@ -86,12 +86,12 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Instructions for usage:',
+        message: 'Usage Instructions:',
         validate: usageInput => {
             if (usageInput) {
                 return true;
             } else {
-                console.log('Providing instructions for usage will help users properly navigate your project. Please try again.');
+                console.log('Please provide instructions for usage, this will help users properly navigate the project.');
                 return false;
             }
         }
@@ -102,19 +102,6 @@ const questions = [
         message: 'How can others contribute to this project?',
         validate: contributionInput => {
             if (contributionInput) {
-                return true;
-            } else {
-                console.log('Please provide instructions on how others can contribute to your project.');
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'tests',
-        message: 'Describe the tests written for your application and how to use them:',
-        validate: testsInput => {
-            if (testsInput) {
                 return true;
             } else {
                 console.log('Please provide instructions on how others can contribute to your project.');

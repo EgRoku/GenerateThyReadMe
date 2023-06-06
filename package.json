@@ -1,0 +1,23 @@
+{
+  "name": "generatethyreadme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgRoku/GenerateThyReadMe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EgRoku/GenerateThyReadMe/issues"
+  },
+  "homepage": "https://github.com/EgRoku/GenerateThyReadMe#readme",
+  "dependencies": {
+    "inquirer": "^9.2.7"
+  }
+}

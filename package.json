@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/EgRoku/GenerateThyReadMe#readme",
   "dependencies": {
-    "inquirer": "^9.2.7"
+    "inquirer": "^8.2.4"
   }
 }

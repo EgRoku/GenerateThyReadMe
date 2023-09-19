@@ -1,7 +1,5 @@
 const fs = require('fs');
 
-// Returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (!license) {
     return ``;

@@ -1,19 +1,19 @@
-// Packages needed for this application
+// Packages
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// Array of questions for user input
-const questions = [
+// Array of questions
+const promptQuestions = [
     {
         type: 'input',
         name: 'name',
-        message: 'Welcome to the GenerateThyReadme! To start, please provide your full name:',
+        message: 'Welcome to my README generator! To start, please provide your name:',
         validate: nameInput => {
             if (nameInput) {
                 return true;
             } else {
-                console.log('Please enter your name!');
+                console.log('You have to enter your name bub!');
                 return false;
             }
         }
@@ -21,12 +21,12 @@ const questions = [
     {
         type: 'input',
         name: 'github',
-        message: 'Enter your GitHub username:',
+        message: 'Enter your GitHub:',
         validate: githubInput => {
             if (githubInput) {
                 return true;
             } else {
-                console.log('Please Link your Github account');
+                console.log('Please give yourself some credit, add your Github!');
                 return false;
             }
         }
@@ -39,7 +39,7 @@ const questions = [
             if (emailInput) {
                 return true;
             } else {
-                console.log('Please enter your email address');
+                console.log('Enter your email for a way for consumers to contact you with questions!');
                 return false;
             }
         }
@@ -47,12 +47,12 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is the title of your project?',
+        message: 'What is your projects title?',
         validate: titleInput => {
             if (titleInput) {
                 return true;
             } else {
-                console.log('Every project has a title, so please, name your child.');
+                console.log('You must have a title! Otherwise we wont know what to call it!');
                 return false;
             }
         }
@@ -60,12 +60,12 @@ const questions = [
     {
         type: 'input',
         name: 'description',
-        message: 'Enter your project description here:',
+        message: "Please enter your project's description:",
         validate: descriptionInput => {
             if (descriptionInput) {
                 return true;
             } else {
-                console.log('Enter a description please, thanks.');
+                console.log('Please enter a discription so others know how/why to use your generator');
                 return false;
             }
         }
@@ -78,7 +78,7 @@ const questions = [
             if (installationInput) {
                 return true;
             } else {
-                console.log('Please provide instructions for installation to ensure users know how to run the program');
+                console.log('We need Instructions! This is madness!');
                 return false;
             }
         }
@@ -91,7 +91,7 @@ const questions = [
             if (usageInput) {
                 return true;
             } else {
-                console.log('Please provide instructions for usage, this will help users properly navigate the project.');
+                console.log('We need to know the usage, or all will be lost in translation!');
                 return false;
             }
         }
@@ -99,12 +99,25 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'How can others contribute to this project?',
+        message: 'How can other devs help contribute to your project?',
         validate: contributionInput => {
             if (contributionInput) {
                 return true;
             } else {
-                console.log('Please provide instructions on how others can contribute to your project.');
+                console.log('Please provide instructions on how other devs can help contribute code to your project.');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Give Test instructions for your tests!',
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('Please provide instructions on how to run the tests dexter!');
                 return false;
             }
         }
@@ -112,13 +125,13 @@ const questions = [
     {
         type: 'confirm',
         name: 'confirmLicenses',
-        message: 'Would you like to include a license?',
+        message: 'Would you like to include a usage license?',
         default: false
     },
     {
         type: 'list',
         name: 'licenses',
-        message: 'What license would you like to include?',
+        message: 'What usage license would you like to include?',
         choices: ['MIT', 'GPL', 'CC--0'],
         when: ({ confirmLicenses }) => {
             if (confirmLicenses) {
@@ -138,10 +151,9 @@ const writeToFile = data => {
             // if there's an error, reject the Promise and send the error to .catch() method
             if (err) {
                 reject (err);
-                // return out of the function here to make sure the Promise doesn't continut to execute the resolve() function
                 return;
             }
-            // if everything went well, resolve the Promise and send the successful data to the .then() method
+            // resolve the Promise and send the successful data
             resolve({
                 ok: true,
                 message: console.log('Success! Navigate to the "dist" folder to see your README!')
@@ -152,7 +164,7 @@ const writeToFile = data => {
 
 // Initialize app
 const init = () => {
-    return inquirer.prompt(questions);
+    return inquirer.prompt(promptQuestions);
 }
 
 // Function call to initialize app

@@ -16,11 +16,6 @@ This App is used to generate a prefessional readme using a template. Fill out th
 1. **NPM:** Use the command "npm init -y" to install Node Package Manager
 1. **Inquirer:** Use the command "npm install inquirer" to get npm's inquirer package
 
-### Before attempting to use this project, make sure to have these programs installed on your computer:  
-* VS Code  
-* GitBash  
-* Node.js  
-
 ## Usage
 
 Initialize Packages using npm i

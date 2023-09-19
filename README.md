@@ -23,13 +23,11 @@ This App is used to generate a prefessional readme using a template. Fill out th
 
 ## Usage
 
-Once software is downloaded and Node packages are initialized, it's time to get started!
+Initialize Packages using npm i
 
-Within the directory for this project, initialize prompts in the command line using "node index.js".
+Start the app using node index.js
 
-Then enter the info for the prompts and it will add a new README file that will be generated and placed into the 'dist' folder.
-
-Not sure what to input for a certain section? Follow the guidelines outlined below.
+Follow the prompts and the completed readme where be placed in the dist folder
 
 ## Questions
 
